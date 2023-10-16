@@ -1,13 +1,21 @@
-const moongodb = require('mongoose');
+import mongoose from 'mongoose';
+const Skills = require('./Skills');
+const Talents = require('./Talents');
+const Constellations = require('./Constellations');
+const Ascensions = require('./Ascensions');
+const TalentMaterials = require('./TalentMaterials');
+const Statistics = require('./Statistics');
 
-interface Character {
-  name: string;
-  desc: string;
-  background: string;
-  stars: number;
+export interface Character {
+  name: String;
+  desc: String;
+  skills: any[];
+  talents: any[];
+  statistics: any[];
+  stars: Number;
 }
 
-const CharactersSchema = new moongodb.Schema({
+const CharactersSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -15,9 +23,14 @@ const CharactersSchema = new moongodb.Schema({
   },
   desc: {
     type: String,
-    required: true,
-    nique: true
+    required: true
   },
+  skills: [Skills],
+  talents: [Talents],
+  constellations: [Constellations],
+  ascensions: [Ascensions],
+  talentMaterials: [TalentMaterials],
+  statistics: [Statistics],
   background: {
     type: String,
     required: true
@@ -28,5 +41,5 @@ const CharactersSchema = new moongodb.Schema({
   }
 });
 
-const CharactersModel = moongodb.model('Characters', CharactersSchema);
+const CharactersModel = mongoose.model('Characters', CharactersSchema);
 module.exports = CharactersModel;

@@ -1,10 +1,13 @@
+import mongoose from 'mongoose';
+
 const SkillsSchema = new mongoose.Schema({
   name: {
     type: String,
-    unique: true
+    required: true
   },
   desc: {
-    type: String
+    type: String,
+    required: true
   }
 });
 

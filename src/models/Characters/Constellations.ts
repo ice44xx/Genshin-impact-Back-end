@@ -1,10 +1,13 @@
+import mongoose from 'mongoose';
+
 const ConstellationsSchema = new mongoose.Schema({
   name: {
     type: String,
-    unique: true
+    required: true
   },
   desc: {
-    type: String
+    type: String,
+    required: true
   }
 });
 
