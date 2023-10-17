@@ -3,12 +3,12 @@ const Ascensions = require('./Ascensions');
 const Refinements = require('./Refinements');
 const Statistics = require('./Statistics');
 
-export interface Weapon {
+export interface WeaponProps {
   name: String;
   desc: String;
-  refinement: [];
-  ascensions: [];
-  statistics: [];
+  refinement: any[];
+  ascensions: any[];
+  statistics: any[];
 }
 
 const WeaponSchema = new mongoose.Schema({

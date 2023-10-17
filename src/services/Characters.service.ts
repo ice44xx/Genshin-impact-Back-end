@@ -1,10 +1,10 @@
 import { Model } from 'mongoose';
-import { Character } from '../models/Characters/Characters';
+import { CharacterProps } from '../models/Characters/Characters';
 
-const CharacterModel: Model<Character> = require('../models/Characters/Characters');
+const CharacterModel: Model<CharacterProps> = require('../models/Characters/Characters');
 
 export const CharactersServices = {
-  createCharacter: async (attributes: Character) => {
+  createCharacter: async (attributes: CharacterProps) => {
     try {
       const create = await CharacterModel.create(attributes);
       return create;

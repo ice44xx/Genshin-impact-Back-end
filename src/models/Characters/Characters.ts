@@ -6,7 +6,7 @@ const Ascensions = require('./Ascensions');
 const TalentMaterials = require('./TalentMaterials');
 const Statistics = require('./Statistics');
 
-export interface Character {
+export interface CharacterProps {
   name: String;
   desc: String;
   skills: any[];
