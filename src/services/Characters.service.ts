@@ -12,6 +12,11 @@ export const CharactersServices = {
   },
   findCharacterByName: async (name: string) => {
     try {
+      if (!name) {
+        const characters = await CharactersModel.find();
+        return characters;
+      }
+
       const regex = new RegExp(name, 'i');
       const characters = await CharactersModel.find({ name: { $regex: regex } });
 

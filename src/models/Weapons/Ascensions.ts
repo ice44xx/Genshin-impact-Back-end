@@ -11,15 +11,18 @@ export const AscensionsSchema = new mongoose.Schema({
   items: [
     {
       name: String,
-      quantity: Number
+      quantity: Number,
+      image: String
     },
     {
       name: String,
-      quantity: Number
+      quantity: Number,
+      image: String
     },
     {
       name: String,
-      quantity: Number
+      quantity: Number,
+      image: String
     }
   ]
 });
