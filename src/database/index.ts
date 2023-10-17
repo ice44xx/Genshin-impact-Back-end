@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const DATABASE = require('../config/environment').DATABASE;
 
-const conectDatabase = () => {
+export const connectDatabase = () => {
   console.log('Conectando ao Mongo...');
   mongoose
     .connect(DATABASE, {
@@ -12,4 +12,4 @@ const conectDatabase = () => {
     .catch((err: Error) => console.log('Algo deu errado', err));
 };
 
-module.exports = conectDatabase;
+module.exports = connectDatabase;

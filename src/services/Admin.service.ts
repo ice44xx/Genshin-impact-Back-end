@@ -33,3 +33,4 @@ export const AdminService = {
     }
   }
 };
+module.exports = AdminService;

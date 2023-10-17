@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { AdminService } from '../services/Admin.service';
-import { AdminModel } from '../models/Admin/Admin';
 import { jwtService } from '../middleware/jwtService';
 
 export const AdminController = {
