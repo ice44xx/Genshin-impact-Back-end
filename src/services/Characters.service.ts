@@ -1,4 +1,7 @@
-const CharacterModel = require('../models/Characters/Characters');
+import { Model } from 'mongoose';
+import { Character } from '../models/Characters/Characters';
+
+const CharacterModel: Model<Character> = require('../models/Characters/Characters');
 
 export const CharactersServices = {
   createCharacter: async (attributes: Character) => {

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import CharactersServices = require('../services/CharactersService');
+import CharactersServices = require('../services/Characters.service');
 
 export const CharactersController = {
   create: async (req: Request, res: Response) => {
