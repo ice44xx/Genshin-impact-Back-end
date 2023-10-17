@@ -11,8 +11,10 @@ router.get('/characters', CharactersController.findAll);
 
 //rota armas
 router.post('/weapons/create', WeaponsController.create);
+router.get('/weapons', WeaponsController.findAll);
 
 //rota artefatos
 router.post('/artifacts/create', ArtifactsController.create);
+router.get('/artifacts', ArtifactsController.findAll);
 
 export { router };

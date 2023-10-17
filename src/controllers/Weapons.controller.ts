@@ -11,5 +11,14 @@ export const WeaponsController = {
       console.error('Erro ao criar o personagem: ', error);
       res.status(500).json({ error: 'Não foi possível criar nova arma' });
     }
+  },
+  findAll: async (req: Request, res: Response) => {
+    try {
+      const find = await WeaponsService.findAll();
+      return res.status(201).json(find);
+    } catch (error) {
+      console.error('Erro ao encontar todas armas: ', error);
+      return res.status(500).json({ error: 'Não foi encontar todas armas.' });
+    }
   }
 };

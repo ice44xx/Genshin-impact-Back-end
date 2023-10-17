@@ -9,5 +9,14 @@ export const ArtifactsService = {
       console.error('Erro ao criar o artefato: ', error);
       throw new Error('Não foi possível criar o artefato.');
     }
+  },
+  findAll: async () => {
+    try {
+      const find = await ArtifactsModel.find();
+      return find;
+    } catch (error) {
+      console.error('Erro ao encontrar todos os artefatos: ', error);
+      throw new Error('Não foi possível encontrar todos os artefatos.');
+    }
   }
 };

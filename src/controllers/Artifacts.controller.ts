@@ -11,5 +11,14 @@ export const ArtifactsController = {
       console.error('Erro ao criar o artefato: ', error);
       return res.status(500).json({ error: 'Não foi possível criar o artefato.' });
     }
+  },
+  findAll: async (req: Request, res: Response) => {
+    try {
+      const find = await ArtifactsService.findAll();
+      return res.status(201).json(find);
+    } catch (error) {
+      console.error('Erro ao encontar o artefato: ', error);
+      return res.status(500).json({ error: 'Não foi encontar o artefato.' });
+    }
   }
 };

@@ -5,6 +5,7 @@ import { ConstellationsSchema } from './Constellations';
 import { TalentSchema } from './Talents';
 import { StatisticsSchema } from './Statistics';
 import { TalentMaterialsSchema } from './TalentMaterials';
+import { CompsSchema } from './Comps';
 
 export interface CharacterProps {
   name: String;
@@ -13,6 +14,8 @@ export interface CharacterProps {
   skills: any[];
   talents: any[];
   statistics: any[];
+  teams: String[];
+  background: String;
   stars: Number;
 }
 
@@ -35,6 +38,12 @@ const CharactersSchema = new mongoose.Schema({
   ascensions: [AscensionsSchema],
   talentMaterials: [TalentMaterialsSchema],
   statistics: [StatisticsSchema],
+  teams: [
+    {
+      title: String,
+      comps: [CompsSchema]
+    }
+  ],
   background: {
     type: String,
     required: true
