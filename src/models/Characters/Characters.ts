@@ -4,10 +4,12 @@ import { SkillsSchema } from './Skills';
 import { ConstellationsSchema } from './Constellations';
 import { TalentSchema } from './Talents';
 import { StatisticsSchema } from './Statistics';
+import { TalentMaterialsSchema } from './TalentMaterials';
 
 export interface CharacterProps {
   name: String;
   desc: String;
+  weak: String;
   skills: any[];
   talents: any[];
   statistics: any[];
@@ -17,10 +19,13 @@ export interface CharacterProps {
 const CharactersSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   desc: {
+    type: String,
+    required: true
+  },
+  weak: {
     type: String,
     required: true
   },
@@ -28,7 +33,7 @@ const CharactersSchema = new mongoose.Schema({
   talents: [TalentSchema],
   constellations: [ConstellationsSchema],
   ascensions: [AscensionsSchema],
-  talentMaterials: [TalentSchema],
+  talentMaterials: [TalentMaterialsSchema],
   statistics: [StatisticsSchema],
   background: {
     type: String,

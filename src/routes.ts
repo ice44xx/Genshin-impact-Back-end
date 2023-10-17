@@ -1,3 +1,4 @@
+import { ArtifactsController } from './controllers/Artifacts.controller';
 import { CharactersController } from './controllers/Characters.controller';
 import { WeaponsController } from './controllers/Weapons.controller';
 import express from 'express';
@@ -10,5 +11,8 @@ router.get('/characters', CharactersController.findAll);
 
 //rota armas
 router.post('/weapons/create', WeaponsController.create);
+
+//rota artefatos
+router.post('/artifacts/create', ArtifactsController.create);
 
 export { router };

@@ -8,5 +8,8 @@ export const SkillsSchema = new mongoose.Schema({
   desc: {
     type: String,
     required: true
+  },
+  image: {
+    type: String
   }
 });

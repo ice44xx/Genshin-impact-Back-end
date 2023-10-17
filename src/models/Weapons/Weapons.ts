@@ -20,6 +20,10 @@ const WeaponSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  image: {
+    type: String,
+    required: true
+  },
   refinement: [RefinementsSchema],
   ascensions: [AscensionsSchema],
   statistics: [StatisticsWeaponSchema]

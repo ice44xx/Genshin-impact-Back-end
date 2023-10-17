@@ -1,12 +1,10 @@
 import mongoose from 'mongoose';
-export const talentMaterialsSchema = new mongoose.Schema({
+export const TalentMaterialsSchema = new mongoose.Schema({
   level: {
-    type: String,
-    required: true
+    type: String
   },
   moraCost: {
-    type: Number,
-    required: true
+    type: Number
   },
   items: [
     {
