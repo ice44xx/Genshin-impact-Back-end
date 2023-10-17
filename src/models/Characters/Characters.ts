@@ -9,9 +9,9 @@ const Statistics = require('./Statistics');
 export interface Character {
   name: String;
   desc: String;
-  skills: any[];
-  talents: any[];
-  statistics: any[];
+  skills: [];
+  talents: [];
+  statistics: [];
   stars: Number;
 }
 
