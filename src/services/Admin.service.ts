@@ -19,5 +19,17 @@ export const AdminService = {
     } catch (error) {
       console.log('Erro ao criar administrador: ', error);
     }
+  },
+  findByEmail: async (email: string) => {
+    try {
+      const admin = AdminModel.findOne({ email });
+      if (!admin) {
+        console.log('Email não encontrado');
+        return null;
+      }
+      return admin;
+    } catch (error) {
+      throw error;
+    }
   }
 };

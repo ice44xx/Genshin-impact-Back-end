@@ -21,5 +21,6 @@ router.get('/artifacts', ArtifactsController.findAll);
 
 //rota de admin
 router.post('/admin/create', authAdmin, AdminController.create);
+router.post('/login/admin', AdminController.login);
 
 export { router };

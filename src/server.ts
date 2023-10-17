@@ -1,6 +1,6 @@
+require('dotenv').config();
 import { router } from './routes';
 import express from 'express';
-require('dotenv').config();
 
 const connectDatabase = require('./database/index');
 

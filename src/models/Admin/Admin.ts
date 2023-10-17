@@ -7,6 +7,13 @@ export interface AdminProps {
   password: string;
 }
 
+interface AdminDocument extends Document {
+  userName: string;
+  email: string;
+  password: string;
+  checkPassword(password: string): Promise<boolean>;
+}
+
 const AdminSchema = new mongoose.Schema({
   userName: {
     type: String,
@@ -38,4 +45,12 @@ AdminSchema.pre('save', async function (next) {
   }
 });
 
-export const AdminModel = mongoose.model('Admin', AdminSchema);
+AdminSchema.methods.checkPassword = async function (password: string) {
+  try {
+    return await bcrypt.compare(password, this.password);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const AdminModel = mongoose.model<AdminDocument>('Admin', AdminSchema);
