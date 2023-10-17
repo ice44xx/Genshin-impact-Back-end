@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-const Ascensions = require('./Ascensions');
-const Refinements = require('./Refinements');
-const Statistics = require('./Statistics');
+import { RefinementsSchema } from './Refinements';
+import { AscensionsSchema } from './Ascensions';
+import { StatisticsWeaponSchema } from './Statistics';
 
 export interface WeaponProps {
   name: String;
@@ -20,10 +20,9 @@ const WeaponSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  refinement: [Refinements],
-  ascensions: [Ascensions],
-  statistics: [Statistics]
+  refinement: [RefinementsSchema],
+  ascensions: [AscensionsSchema],
+  statistics: [StatisticsWeaponSchema]
 });
 
-const WeaponModel = mongoose.model('Weapon', WeaponSchema);
-module.exports = WeaponModel;
+export const WeaponModel = mongoose.model('Weapon', WeaponSchema);

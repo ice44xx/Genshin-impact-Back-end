@@ -1,6 +1,7 @@
+import { router } from './routes';
+import express from 'express';
 require('dotenv').config();
-const router = require('./routes');
-const express = require('express');
+
 const connectDatabase = require('./database/index');
 
 const PORT = process.env.PORT || 3001;

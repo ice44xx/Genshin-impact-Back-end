@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const ConstellationsSchema = new mongoose.Schema({
+export const ConstellationsSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -10,5 +10,3 @@ const ConstellationsSchema = new mongoose.Schema({
     required: true
   }
 });
-
-module.exports = ConstellationsSchema;

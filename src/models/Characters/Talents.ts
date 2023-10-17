@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const TalentSchema = new mongoose.Schema({
+export const TalentSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -9,5 +9,3 @@ const TalentSchema = new mongoose.Schema({
     required: true
   }
 });
-
-module.exports = TalentSchema;

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const talentMaterialsSchema = new mongoose.Schema({
+export const talentMaterialsSchema = new mongoose.Schema({
   level: {
     type: String,
     required: true
@@ -15,5 +15,3 @@ const talentMaterialsSchema = new mongoose.Schema({
     }
   ]
 });
-
-module.exports = talentMaterialsSchema;

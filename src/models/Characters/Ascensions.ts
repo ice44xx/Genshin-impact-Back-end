@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const AscensionsSchema = new mongoose.Schema({
+export const AscensionsSchema = new mongoose.Schema({
   level: {
     type: String,
     required: true
@@ -15,5 +15,3 @@ const AscensionsSchema = new mongoose.Schema({
     }
   ]
 });
-
-module.exports = AscensionsSchema;

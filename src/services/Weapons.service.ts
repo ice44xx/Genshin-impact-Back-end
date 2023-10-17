@@ -1,7 +1,4 @@
-import { Model } from 'mongoose';
-import { WeaponProps } from '../models/Weapons/Weapons';
-
-const WeaponModel: Model<WeaponProps> = require('../models/Weapons/Weapons');
+import { WeaponModel, WeaponProps } from '../models/Weapons/Weapons';
 
 export const WeaponsService = {
   createWeapon: async (attributes: WeaponProps) => {

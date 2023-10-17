@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-const StatisticsWeaponSchema = new mongoose.Schema({
+
+export const StatisticsWeaponSchema = new mongoose.Schema({
   atqBasic: {
     type: Number
   },
@@ -21,5 +22,3 @@ const StatisticsWeaponSchema = new mongoose.Schema({
     type: Number
   }
 });
-
-module.exports = StatisticsWeaponSchema;

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const SkillsSchema = new mongoose.Schema({
+export const SkillsSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -10,5 +10,3 @@ const SkillsSchema = new mongoose.Schema({
     required: true
   }
 });
-
-module.exports = SkillsSchema;

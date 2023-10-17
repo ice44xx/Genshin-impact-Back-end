@@ -1,10 +1,9 @@
 import mongoose from 'mongoose';
-const Skills = require('./Skills');
-const Talents = require('./Talents');
-const Constellations = require('./Constellations');
-const Ascensions = require('./Ascensions');
-const TalentMaterials = require('./TalentMaterials');
-const Statistics = require('./Statistics');
+import { AscensionsSchema } from './Ascensions';
+import { SkillsSchema } from './Skills';
+import { ConstellationsSchema } from './Constellations';
+import { TalentSchema } from './Talents';
+import { StatisticsSchema } from './Statistics';
 
 export interface CharacterProps {
   name: String;
@@ -25,12 +24,12 @@ const CharactersSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  skills: [Skills],
-  talents: [Talents],
-  constellations: [Constellations],
-  ascensions: [Ascensions],
-  talentMaterials: [TalentMaterials],
-  statistics: [Statistics],
+  skills: [SkillsSchema],
+  talents: [TalentSchema],
+  constellations: [ConstellationsSchema],
+  ascensions: [AscensionsSchema],
+  talentMaterials: [TalentSchema],
+  statistics: [StatisticsSchema],
   background: {
     type: String,
     required: true
@@ -41,5 +40,4 @@ const CharactersSchema = new mongoose.Schema({
   }
 });
 
-const CharactersModel = mongoose.model('Characters', CharactersSchema);
-module.exports = CharactersModel;
+export const CharactersModel = mongoose.model('Characters', CharactersSchema);

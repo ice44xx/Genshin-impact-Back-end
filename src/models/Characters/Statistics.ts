@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const StatisticsSchema = new mongoose.Schema({
+export const StatisticsSchema = new mongoose.Schema({
   sands: {
     type: String,
     required: true
@@ -14,5 +14,3 @@ const StatisticsSchema = new mongoose.Schema({
     require: true
   }
 });
-
-module.exports = StatisticsSchema;
