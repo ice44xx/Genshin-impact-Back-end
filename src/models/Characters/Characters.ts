@@ -11,7 +11,8 @@ export interface CharacterProps {
   name: String;
   desc: String;
   weak: String;
-  skills: any[];
+  img: String;
+  skills: String[];
   talents: any[];
   statistics: any[];
   teams: String[];
@@ -31,6 +32,9 @@ const CharactersSchema = new mongoose.Schema({
   weak: {
     type: String,
     required: true
+  },
+  img: {
+    type: String
   },
   skills: [SkillsSchema],
   talents: [TalentSchema],
